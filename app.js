@@ -41,7 +41,7 @@ const updateUI = (data) => {
 // let timeSrc = weather.isDayTime ? "../img/day.svg" : "../img/night.svg";
 // Remove the d-none class if present
 const updateCity = async (city) => {
-  const cityDets = await getCity(city);
+  const cityDets = await getCity(city);  //line 44
   const weather = await getWeather(cityDets.Key);
 
   return {

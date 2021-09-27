@@ -5,7 +5,9 @@ const getWeather = async (id) => {
   const query = `${id}?apiKey=${key}`;
 
   const response = await fetch(base + query, {
+    method: "GET",
     mode: "no-cors",
+    headers: { "Content-Type": "application/json", "API-Key": key },
   });
   const data = await response.json();
 
@@ -17,9 +19,11 @@ const getCity = async (city) => {
   const query = `?apikey=${key}&q=${city}`;
 
   const response = await fetch(base + query, {
+    method: "GET",
     mode: "no-cors",
+    headers: { "Content-Type": "application/json", "API-Key": key },
   });
-  const data = await response.json();
+  const data = await response.json();    //line 26
 
   return data[0];
 };
