@@ -35,10 +35,11 @@ const updateUI = (data) => {
 
   if (card.classList.contains("d-none")) {
     card.classList.remove("d-none");
-  }}
-  // Night Day Image and Icon  
-  // let timeSrc = weather.isDayTime ? "../img/day.svg" : "../img/night.svg";
-  // Remove the d-none class if present
+  }
+};
+// Night Day Image and Icon
+// let timeSrc = weather.isDayTime ? "../img/day.svg" : "../img/night.svg";
+// Remove the d-none class if present
 const updateCity = async (city) => {
   const cityDets = await getCity(city);
   const weather = await getWeather(cityDets.Key);
@@ -57,5 +58,5 @@ cityForm.addEventListener("submit", (event) => {
   //Update the UI with the new city
   updateCity(city)
     .then((data) => updateUI(data))
-    .catch((err) => console.error(err));
-})
+    .catch((err) => console.log(err));
+});
