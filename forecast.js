@@ -1,4 +1,4 @@
-const key = "yOF1xv9D2kjHH9AUQwrakvQ9lQASYt4A";
+const key = "yOF1xv9D2kjHH9AUQwrakvQ9lQASYt4A"; //forecast.js
 
 const getWeather = async (id) => {
   const base = "http://dataservice.accuweather.com/currentconditions/v1/";
@@ -23,7 +23,7 @@ const getCity = async (city) => {
     mode: "no-cors",
     headers: { "Content-Type": "application/json", "API-Key": key },
   });
-  const data = await response.json();    //line 26
+  const data = await response.json(); //line 26  expected end of input
 
   return data[0];
 };
